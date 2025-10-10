@@ -1,21 +1,47 @@
 body {
     margin: 0;
+    padding: 0;
     background-color: #1a1a1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
 }
 
+/* Layout */
+main {
+    padding: 40px 20px;
+    max-width: 1280px;
+    margin: auto;
+}
+
+header, footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #111;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Flex container for cards */
 .container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
-    max-width: 1280px;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
 }
 
+/* Card border wrapper */
 .border {
     height: 369px;
     width: 290px;
@@ -29,6 +55,7 @@ body {
     border: 1px solid white;
 }
 
+/* Card styling */
 .card {
     height: 379px;
     width: 300px;
@@ -43,6 +70,7 @@ body {
     position: relative;
 }
 
+/* Individual card background images */
 .card0 {
     background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg') center center no-repeat;
     background-size: 300px;
@@ -73,8 +101,9 @@ body {
     background-size: 600px;
 }
 
+/* Text overlay */
 h2 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
     color: white;
     margin: 20px;
     opacity: 0;
@@ -86,6 +115,7 @@ h2 {
     opacity: 1;
 }
 
+/* Icon styling */
 .icons i {
     opacity: 0;
     transition: opacity 1s;
@@ -93,9 +123,7 @@ h2 {
 
 .icons {
     position: absolute;
-    fill: #fff;
     color: #fff;
-    height: 130px;
     top: 226px;
     width: 50px;
     display: flex;
@@ -104,3 +132,32 @@ h2 {
     justify-content: space-around;
 }
 
+/* Section spacing */
+section {
+    margin-bottom: 60px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card, .border {
+        width: 90%;
+        height: auto;
+    }
+
+    .card {
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .icons {
+        top: auto;
+        bottom: 20px;
+        flex-direction: row;
+        gap: 10px;
+    }
+}
